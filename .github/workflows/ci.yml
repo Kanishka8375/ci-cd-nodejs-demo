@@ -11,20 +11,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: 📥 Checkout repository
-      uses: actions/checkout@v4
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
 
-    - name: 🟢 Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        cache: 'npm'
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
-    - name: 📦 Install dependencies
-      run: npm install
+      - name: 📦 Install dependencies
+        run: npm ci
 
-    - name: 🛠️ Fix Jest permissions (Linux)
-      run: chmod +x ./node_modules/.bin/jest
+      - name: 🛠️ Ensure Jest is executable
+        run: chmod +x node_modules/.bin/jest
 
-    - name: ✅ Run tests
-      run: npm test
+      - name: ✅ Run tests with npx
+        run: npx jest --ci
