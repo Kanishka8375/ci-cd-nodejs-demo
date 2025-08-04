@@ -1,5 +1,6 @@
+// app.test.js
 const request = require('supertest');
-const app = require('./app'); // This imports your app.js
+const app = require('./app');
 
 describe('Express App', () => {
   it('GET / should return 200', async () => {
