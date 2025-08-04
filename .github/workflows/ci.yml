@@ -23,4 +23,4 @@ jobs:
         run: npm install
 
       - name: Run Jest
-        run: npm jest
+        run: npm test
