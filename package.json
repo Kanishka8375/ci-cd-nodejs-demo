@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "echo \"No tests defined\" && exit 0"
+    "test": "jest"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -14,5 +14,9 @@
     "jade": "^0.29.0",
     "morgan": "^1.10.1",
     "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "jest": "^30.0.5",
+    "supertest": "^6.3.4"
   }
 }
